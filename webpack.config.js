@@ -19,4 +19,21 @@ module.exports = {
           Popper: ['popper.js', 'default'],
         })
     ],
+    module: {
+      loaders: [
+        {   
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("css-loader", "style-loader"),
+        },
+        {
+            test: /\.(png|jpg)$/, loader: "file-loader?name=images/[name].[ext]"
+        },
+        {
+            test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        },
+        {
+            test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader"
+        },
+      ],
+    },  
 };
