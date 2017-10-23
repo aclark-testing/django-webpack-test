@@ -6,7 +6,7 @@ project-app
 ::
 
     make python-virtualenv-3
-    make install
+    make python-install
     make npm-install
     make webpack
     make django-static
