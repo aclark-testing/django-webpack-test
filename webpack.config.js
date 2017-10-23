@@ -7,11 +7,11 @@ module.exports = {
     entry: "./entry",
     output: {
         path: __dirname + "/project/app/assets/webpack_bundles",
-        filename: "bundle.js"
+        filename: "[name]-[hash].js"
     },
     plugins: [
         new BundleTracker({filename: './webpack-stats.json'}),
-        new ExtractTextPlugin("[name].css"),
+        new ExtractTextPlugin("[name]-[hash].css"),
         new webpack.ProvidePlugin({
           $: 'jquery',
           jQuery: 'jquery',
