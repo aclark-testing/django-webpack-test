@@ -12,6 +12,7 @@ module.exports = {
     plugins: [
         new BundleTracker({filename: './webpack-stats.json'}),
         new ExtractTextPlugin("[name]-[hash].css"),
+        // http://getbootstrap.com/docs/4.0/getting-started/webpack/#importing-javascript
         new webpack.ProvidePlugin({
           $: 'jquery',
           jQuery: 'jquery',
@@ -19,11 +20,15 @@ module.exports = {
           Popper: ['popper.js', 'default'],
         })
     ],
+    // https://github.com/webpack-contrib/extract-text-webpack-plugin#usage
     module: {
       loaders: [
         {   
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract("css-loader", "style-loader"),
+            use: ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              use: "css-loader"
+            })
         },
       ],
     },  
