@@ -1,6 +1,6 @@
 var BundleTracker = require("webpack-bundle-tracker");
-var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require("webpack");
 
 module.exports = {
     context: __dirname + "/project/app/assets",
