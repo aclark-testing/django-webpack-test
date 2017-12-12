@@ -1,0 +1,1 @@
+{"status":"error","error":"EntryModuleNotFoundError","message":"Entry module not found: Error: Can't resolve './entry' in '/Users/alexclark/Developer/aclark-testing/django-webpack-test/project/app/static'"}
