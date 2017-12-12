@@ -4,7 +4,7 @@ var webpack = require("webpack");
 
 module.exports = {
     context: __dirname + "/project/app/static",
-    entry: "./entry",
+    entry: "./app",
     output: {
         path: __dirname + "/project/app/static/webpack_bundles",
         filename: "[name]-[hash].js"
