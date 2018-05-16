@@ -91,8 +91,8 @@ django-app-clean:
 django-app-init:
 	-mkdir -p $(PROJECT)/$(APP)/templates
 	-touch $(PROJECT)/$(APP)/templates/base.html
-	-django-admin startproject $(PROJECT) .
-	-django-admin startapp $(APP) $(PROJECT)/$(APP)
+	-bin/django-admin startproject $(PROJECT) .
+	-bin/django-admin startapp $(APP) $(PROJECT)/$(APP)
 django-db-clean:  # PostgreSQL
 	-dropdb $(PROJECT)
 django-db-init:  # PostgreSQL
@@ -144,6 +144,7 @@ migrate: django-migrate  # Alias
 migrations: django-migrations  # Alias
 static: django-static  # Alias
 su: django-su  # Alias
+test: django-test  # Alias
 
 # Elastic Beanstalk
 eb-init: 
@@ -273,7 +274,6 @@ plone-serve:
 install: python-install  # Alias
 lint: python-lint  # Alias
 serve: python-serve  # Alias
-test: python-test  # Alias
 python-clean:
 	find . -name \*.pyc | xargs rm -v
 python-flake:
@@ -385,5 +385,5 @@ webpack-init:
 	touch app.js
 	echo "module.exports = { entry: './app.js', output: { filename: 'bundle.js' } }" > webpack.config.js
 webpack:
-	webpack
+	./node_modules/.bin/webpack
 pack: webpack  # Alias
