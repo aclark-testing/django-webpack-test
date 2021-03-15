@@ -1,5 +1,5 @@
 var BundleTracker = require("webpack-bundle-tracker");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin-updated");
 var webpack = require("webpack");
 
 module.exports = {
