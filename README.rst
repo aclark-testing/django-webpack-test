@@ -5,8 +5,4 @@ project-app
 
 ::
 
-    make python-virtualenv-3
-    make python-install
-    make npm-install
-    make pack
-    make django-serve
+    npm install --save-dev bootstrap css-loader extract-text-webpack-plugin jquery popper.js style-loader webpack webpack-bundle-tracker
